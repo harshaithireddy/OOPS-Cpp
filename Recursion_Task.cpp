@@ -5,25 +5,31 @@ using namespace std;
 
 void fun1(int i) {
     if(i > 10) return;
-    else cout << i << " ";
+    cout << i << " ";
     fun1(i+1);
 }
 
 void fun2(int i) {
     if(i < 1) return;
-    else cout << i << " ";
+    cout << i << " ";
     fun2(i-1);
+}
+
+voif fun3(int i) {
+    if(i > 10) return;
+    fun3(i+1);
+    cout << i << " ";
 }
 
 int factorial(int n) {
     int fact = 1;
     if(n == 0 || n == 1) return 1;
-    else return n * factorial(n - 1);
+    return n * factorial(n - 1);
 }
 
 int countdigits(int n) {
     if(n == 0) return 0;
-    else return 1 + countdigits(n/10);
+    return 1 + countdigits(n/10);
 }
 
 int main() {
@@ -31,6 +37,10 @@ int main() {
     cout << endl;
 
     fun2(10);
+    cout << endl;
+
+    // 10 to 1 using back tracking
+    fun3(1);
     cout << endl;
 
     int n;
